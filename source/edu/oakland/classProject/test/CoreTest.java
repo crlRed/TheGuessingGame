@@ -10,7 +10,7 @@ import junit.framework.*;
 * @version: v0.5 20150803
 */
 
-public class testGame{
+public class CoreTest extends testCase{
 	
 	/**
 	This JUnit test package creates an instance of the game and then provides 
@@ -35,7 +35,17 @@ public class testGame{
 				  the upper bound given to the program
 	*/
 	private int testGuesses = 10;
-	private int userNumber = 100;
+	private int testUserNumber = 2;
+	private String testUserInput = "<";
+	private in testUpperBound0=1024;
+	private int testUpperBound1=512;
+	private int testUpperBound2=256;
+	private int testUpperBound3=128;
+	private int testUpperBound4=64;
+	private int testUpperBound5=32;
+	private int testUpperBound6=16;
+	private int testUpperBound7=8;
+	private int testUpperBound8=4;
 	
 	public setUp(){
 	/**
@@ -44,24 +54,40 @@ public class testGame{
 	/**
 	*setUp() method initializes all variables before each test
 	*/
+	
+	
 	}
 	
 	public testGame(){
 		/**
 		*TODO: define more tests like this
 		*/
-		assertNotSame(userNumber, numberGuessed)    // prove that the entered 
-													// number and the final 
-													// (or approved guess) are 
-													// equal, but the references
-													// are not the same
+		assertTrue(testUserInput, inputReceived);	//verifies that the option entered by
+								// the user to Display() is the same as the 
+								// Main() receives and uses
+								// this is repeated 9 times 
+		
+		assertTrue(testUpperBound1,upperBound);		// prove that the upperBound that Core
+								// calculates is equal to the known bound for each
+								// testUpperBound0-8
+		
+		assertNotSame(testUserNumber, numberGuessed);    // prove that the entered 
+								// number and the final 
+								// or approved guess) are 
+								// equal, but the references
+								// are not the same
+								
+		assertTrue(testUserNumber, finalNumberGuessed);	//compares the programs final guess	
+								// with the user's number entered
+								
+		assertTrue(testGuesses >=  currentGuess);    // prove that it was guessed
+								// in 10 tries or less
 
-		assertTrue(testGuesses >=  currentGuess)    // prove that it was guessed
-													// in 10 tries or less
-
-		assertTrue(testGuesses, calcGuesses)        // calculated number of 
-													// guesses  matches the 
-													// expected number of 
-													// guesses.
+		assertTrue(testGuesses, calcGuesses);        // calculated number of 
+								// guesses  matches the 
+								// expected number of 
+								// guesses.
+		// did display rcv ">" assertTrue, did display pass ">" to main assertTrue, does core calc correct range assertTrue x8,
+	
 	}
 }
